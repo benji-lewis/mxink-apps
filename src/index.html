@@ -1,0 +1,147 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>MX Ink compatible apps for Meta Quest</title>
+  <meta name="description" content="{{COUNT}} Meta Quest apps that work with the Logitech MX Ink stylus, with links to each app's Meta Horizon Store page and website.">
+  <link rel="canonical" href="{{SITE_URL}}/">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="MX Ink compatible apps for Meta Quest">
+  <meta property="og:description" content="{{COUNT}} Meta Quest apps that work with the Logitech MX Ink stylus.">
+  <meta property="og:url" content="{{SITE_URL}}/">
+  <meta name="twitter:card" content="summary">
+  <meta name="color-scheme" content="light dark">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <script type="application/ld+json">{{JSON_LD}}</script>
+  <style>
+    :root {
+      --bg: #f6f6f4; --surface: #ffffff; --text: #18181b; --muted: #5b5b66; --line: #e3e3e0;
+      --accent: #5b4bdb; --accent-ink: #ffffff; --accent-soft: #ecebfb;
+      --ok: #1f7a4d; --ok-soft: #e3f3ea; --info: #275d9e; --info-soft: #e5eef9; --warn: #8a5a00; --warn-soft: #fbf0d9;
+      --radius: 14px;
+    }
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: #111114; --surface: #1b1b20; --text: #ececf1; --muted: #a2a2ad; --line: #2c2c34;
+        --accent: #8b7ff0; --accent-ink: #111114; --accent-soft: #26233f;
+        --ok: #6fd3a0; --ok-soft: #173126; --info: #8ab8f0; --info-soft: #18263a; --warn: #f0c46a; --warn-soft: #33290f;
+      }
+    }
+    * { box-sizing: border-box; }
+    body { margin: 0; background: var(--bg); color: var(--text); font: 16px/1.55 system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; }
+    a { color: var(--accent); }
+    .wrap { max-width: 1120px; margin: 0 auto; padding: 0 20px; }
+    header.wrap { padding-top: 56px; padding-bottom: 24px; }
+    .eyebrow { margin: 0 0 8px; font-size: .85rem; letter-spacing: .08em; text-transform: uppercase; color: var(--muted); }
+    h1 { margin: 0 0 12px; font-size: clamp(1.9rem, 4.5vw, 2.8rem); line-height: 1.15; letter-spacing: -.02em; }
+    .lede { margin: 0; max-width: 62ch; color: var(--muted); font-size: 1.08rem; }
+    .toolbar { position: sticky; top: 0; z-index: 5; background: color-mix(in srgb, var(--bg) 92%, transparent); backdrop-filter: blur(8px); border-bottom: 1px solid var(--line); padding: 12px 0; }
+    .toolbar .wrap { display: flex; flex-wrap: wrap; gap: 10px; align-items: center; }
+    .search { flex: 1 1 220px; min-width: 0; padding: 10px 14px; border-radius: 999px; border: 1px solid var(--line); background: var(--surface); color: var(--text); font: inherit; }
+    .search:focus { outline: 2px solid var(--accent); outline-offset: 1px; }
+    .chips { display: flex; flex-wrap: wrap; gap: 6px; }
+    .chip { border: 1px solid var(--line); background: var(--surface); color: var(--text); border-radius: 999px; padding: 6px 12px; font: inherit; font-size: .9rem; cursor: pointer; }
+    .chip span { color: var(--muted); font-variant-numeric: tabular-nums; margin-left: 2px; }
+    .chip.active { background: var(--accent); border-color: var(--accent); color: var(--accent-ink); }
+    .chip.active span { color: inherit; opacity: .8; }
+    main { padding: 8px 0 48px; }
+    .cat { margin-top: 36px; }
+    .cat h2 { font-size: 1.25rem; margin: 0 0 14px; display: flex; align-items: center; gap: 8px; }
+    .count { font-size: .8rem; font-weight: 600; color: var(--muted); background: var(--surface); border: 1px solid var(--line); border-radius: 999px; padding: 1px 9px; }
+    .grid { list-style: none; margin: 0; padding: 0; display: grid; gap: 14px; grid-template-columns: repeat(auto-fill, minmax(290px, 1fr)); }
+    .card { background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); padding: 18px; display: flex; flex-direction: column; }
+    .card-head { display: flex; justify-content: space-between; align-items: flex-start; gap: 10px; }
+    .card h3 { margin: 0; font-size: 1.08rem; line-height: 1.3; }
+    .badge { flex: none; font-size: .72rem; font-weight: 600; border-radius: 999px; padding: 2px 8px; white-space: nowrap; }
+    .badge-official { color: var(--ok); background: var(--ok-soft); }
+    .badge-confirmed { color: var(--info); background: var(--info-soft); }
+    .badge-reported { color: var(--warn); background: var(--warn-soft); }
+    .dev { margin: 2px 0 8px; color: var(--muted); font-size: .9rem; }
+    .desc { margin: 0 0 8px; }
+    .meta { margin: 0 0 14px; color: var(--muted); font-size: .85rem; }
+    .note { margin: -6px 0 14px; font-size: .85rem; color: var(--muted); border-left: 3px solid var(--line); padding-left: 8px; }
+    .links { margin-top: auto; display: flex; flex-wrap: wrap; gap: 8px; align-items: center; }
+    .btn { display: inline-block; text-decoration: none; font-size: .9rem; font-weight: 600; padding: 7px 13px; border-radius: 9px; border: 1px solid var(--line); color: var(--text); }
+    .btn:hover { border-color: var(--accent); }
+    .btn-primary { background: var(--accent); border-color: var(--accent); color: var(--accent-ink); }
+    .btn-primary:hover { filter: brightness(1.08); }
+    .src { margin-left: auto; font-size: .8rem; color: var(--muted); }
+    .empty { display: none; padding: 40px 0; color: var(--muted); text-align: center; }
+    .about { border-top: 1px solid var(--line); padding-top: 32px; padding-bottom: 56px; color: var(--muted); font-size: .92rem; }
+    .about h2 { color: var(--text); font-size: 1.05rem; margin: 24px 0 8px; }
+    .about ul { padding-left: 20px; margin: 0; }
+    .legend { display: flex; flex-wrap: wrap; gap: 14px; margin: 8px 0 0; }
+    .legend span { display: inline-flex; gap: 6px; align-items: center; }
+    [hidden] { display: none !important; }
+    @media (max-width: 640px) {
+      header.wrap { padding-top: 36px; }
+      .chips { flex-wrap: nowrap; overflow-x: auto; width: 100%; padding-bottom: 2px; scrollbar-width: none; }
+      .chip { flex: none; }
+    }
+  </style>
+</head>
+<body>
+  <header class="wrap">
+    <p class="eyebrow">Logitech MX Ink · Meta Quest</p>
+    <h1>Apps that work with MX Ink</h1>
+    <p class="lede">{{COUNT}} Meta Quest apps that support the Logitech MX Ink stylus, with links to the Meta Horizon Store and each app's website.</p>
+  </header>
+
+  <div class="toolbar" role="search">
+    <div class="wrap">
+      <input class="search" type="search" placeholder="Search apps" aria-label="Search apps" id="q">
+      <div class="chips" role="group" aria-label="Filter by category">{{FILTERS}}</div>
+    </div>
+  </div>
+
+  <main class="wrap" id="apps">
+    {{SECTIONS}}
+    <p class="empty" id="empty">No apps match your search.</p>
+  </main>
+
+  <footer class="about wrap">
+    <h2>About this list</h2>
+    <p>Last checked {{UPDATED}}. The list comes from Logitech, Meta and app developers. Support can change, so check the store page before you buy. Know an app that is missing? <a href="https://github.com/benji-lewis/mxink-apps/issues/new?title=Add%20app%3A%20" rel="noopener" target="_blank">Suggest it</a>.</p>
+    <div class="legend">
+      <span><span class="badge badge-official">Official</span> on a Logitech or Meta list</span>
+      <span><span class="badge badge-confirmed">Developer confirmed</span> the developer announced support</span>
+      <span><span class="badge badge-reported">Reported</span> press reports only</span>
+    </div>
+    {{DEV_TOOLS}}
+    <p style="margin-top:24px">This site is not affiliated with Logitech or Meta. MX Ink is a trademark of Logitech. Meta Quest is a trademark of Meta Platforms, Inc. The full list is also available as <a href="/apps.json">JSON</a>.</p>
+  </footer>
+
+  <script>
+    (() => {
+      const q = document.getElementById("q");
+      const chips = [...document.querySelectorAll(".chip")];
+      const sections = [...document.querySelectorAll(".cat")];
+      const empty = document.getElementById("empty");
+      let filter = "all";
+      function apply() {
+        const term = q.value.trim().toLowerCase();
+        let shown = 0;
+        for (const s of sections) {
+          const inCat = filter === "all" || s.dataset.category === filter;
+          let n = 0;
+          for (const c of s.querySelectorAll(".card")) {
+            const ok = inCat && (!term || c.dataset.search.includes(term));
+            c.hidden = !ok;
+            if (ok) n++;
+          }
+          s.hidden = n === 0;
+          shown += n;
+        }
+        empty.style.display = shown ? "none" : "block";
+      }
+      chips.forEach((b) => b.addEventListener("click", () => {
+        filter = b.dataset.filter;
+        chips.forEach((c) => { c.classList.toggle("active", c === b); c.setAttribute("aria-pressed", c === b); });
+        apply();
+      }));
+      q.addEventListener("input", apply);
+    })();
+  </script>
+</body>
+</html>
